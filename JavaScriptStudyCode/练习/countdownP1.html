@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button{
+      width: 100px;
+      height: 100px;
+      margin-left: 40%;
+      margin-top: 20%;
+    } 
+  </style>
+</head>
+<body>
+  <button> 支付</button>
+  <script>
+    document.getElementsByTagName('button')[0].onclick =()=>{
+      let res = window.confirm("Are you comfirm payment?")
+      if(res){
+        location.href='./countdownP2.html'
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #small {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 200px;
+      top: 200px;
+      border: 1px solid black;
+    }
+
+    #small img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #mark {
+      display: none;
+      width: 25px;
+      height: 25px;
+      background-color: black;
+      opacity: 0.5;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #big {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 500px;
+      top: 200px;
+       display: none; 
+       overflow: hidden; 
+      
+      border: 1px solid black;
+
+    }
+    #big img {
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      left: 0;
+      top: 0;
+    }
+  </style> 
+  <script>
+    window.onload = function () {
+      var oSmall = document.getElementById('small')
+      var oBig = document.getElementById('big')
+      var oMark = document.getElementById('mark')
+      var oBigImg = oBig.getElementsByTagName('img')[0]
+
+      oSmall.onmouseover = function () {
+        oMark.style.display = 'block'
+        oBig.style.display = 'block'
+      }
+      oSmall.onmouseleave = function () {
+        oMark.style.display = 'none'
+        oBig.style.display = 'none'
+      }
+      oSmall.onmousemove = function (ev) {
+        //设置mark移动 与鼠标一致
+        //需要对mark的区域限制，不能出界
+
+        //首先 mark的 left不能小于0，小于0 就左超出了 ，
+        //  不能大于边框-自身，不然最右边会超出
+        var left = ev.clientX - oSmall.offsetLeft - 12;
+        var top = ev.clientY - oSmall.offsetTop - 12
+        if (left <= 0) {
+          left = 0;
+        } else if (left >= 75) {
+          left = 75
+        }
+        if (top <= 0) {
+          top = 0
+        } else if (top >= 75) {
+          top = 75
+        }
+
+        // console.log(left);
+        oMark.style.left = left + 'px'
+        oMark.style.top = top + 'px'
+
+        oBigImg.style.left =  left * -3 +'px'
+        oBigImg.style.top =   top * -3 +'px'
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+
+
+  <div id='small'>
+    <img src="../../photo/header.png" alt="">
+    <div id='mark'></div>
+  </div>
+
+  <div id="big">
+    <img src="../../photo/header.png" alt="">
+  </div>
+</body>
+
+</html>

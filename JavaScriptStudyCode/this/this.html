@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // function show(x,y ){
+    //   console.log(this);
+    //   console.log(x,y);
+    // }
+    
+    // show.bind('bind')(40,50)
+    // show.apply('call',[10,20])
+    //  show(10,20);
+    // show.call('call',10,20)
+
+    // show(10,20);
+    var arr = [20, 10 ,50,60,1,22]
+
+    // console.log(Math.min(arr));
+    console.log(Math.min.apply(null,arr));
+
+    function Foo() {
+    var i = 0;
+    return function() {
+        console.log(i++);
+    }
+}
+
+var f1 = Foo(),
+    f2 = Foo();
+f1();
+f1();
+f2();
+
+  </script>
+</body>
+</html>

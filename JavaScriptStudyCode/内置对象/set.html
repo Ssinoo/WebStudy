@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var set = new Set();
+    set.add(1);
+    set.add(3);
+    set.add(5);
+    //不会重复添加
+    set.add(3);
+    //遍历
+    set.forEach(v=>{
+      console.log(v);
+    })
+  </script>
+</body>
+</html>

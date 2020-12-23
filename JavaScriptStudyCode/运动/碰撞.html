@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 100px;
+      background-color: red;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+
+      position: absolute;
+      top: 200px;
+      left: 200px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id='div1'></div>
+  <div id='div2'></div>
+  <script>
+    var div1 = document.getElementById('div1')
+    var div2 = document.getElementById('div2')
+    trap(div2)
+    //碰撞
+    function konck(node1, node2) {
+      //获取第一个元素上下左右的XY坐标
+      var l1 = node1.offsetLeft
+      // console.log(dl);
+      var r1 = node1.offsetLeft + node1.offsetWidth
+      var t1 = node1.offsetTop
+      var d1 = node1.offsetTop + node1.offsetHeight
+
+      //获取第二个元素上下左右的XY坐标
+      var l2 = node2.offsetLeft
+      var r2 = node2.offsetLeft + node1.offsetWidth
+      var t2 = node2.offsetTop
+      var d2 = node2.offsetTop + node1.offsetHeight
+
+      //判断第二个元素是否会永远不碰到，要求是 2上碰不到1下，2下碰不到1上，2左碰不到1右，2右碰不到1左
+      if (l2>r1 || r2 <l1 || t2>d1 || d2<t1 ) {
+        return false
+      } else {
+        return true
+      }
+    }
+
+    var div1 = document.getElementById('div1')
+    var div2 = document.getElementById('div2')
+    //拖拽
+    function trap(node) {
+      node.onmousedown = function (ev) {
+        //获取鼠标在物体内部的坐标位置
+        var offsetX = ev.clientX -node.offsetLeft
+        var offsetY = ev.clientY - node.offsetTop
+        document.onmousemove = function (ev) {
+          //判断碰撞
+          if (konck(div1, div2)) {
+            console.log('konck');
+            div1.style.backgroundColor = 'black'
+            
+          } else {
+            div1.style.backgroundColor = 'red'
+
+          }
+          //鼠标位置减去鼠标在物体内部的位置
+          node.style.left = ev.clientX - offsetX + 'px'
+          node.style.top = ev.clientY - offsetY  + 'px'
+        }
+      }
+      //移除鼠标，取消onmousemove事件
+      document.onmouseup = function () {
+        document.onmousemove = null
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

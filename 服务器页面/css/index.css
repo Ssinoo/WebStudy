@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li,
+ul {
+  list-style: none;
+}
+.header {
+  height: 100px;
+  display: flex;
+}
+.header .header-left {
+  flex: 1;
+  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header-left img {
+  width: 40px;
+  height: 40px;
+}
+.header .header-left a {
+  color: #ffffff;
+}
+.header .header-right {
+  flex: 1;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header-right img {
+  width: 40px;
+  height: 40px;
+}
+.header .header-right a {
+  color: #ffffff;
+}
+.content {
+  display: flex;
+  height: 1000px;
+}
+.content .content-left,
+.content .content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.content .content-left .content-item,
+.content .content-right .content-item {
+  display: flex;
+  flex-direction: column;
+}
+.content .content-left .content-item a,
+.content .content-right .content-item a {
+  transform: translateX(13%);
+  width: 80%;
+  height: 70px;
+  background-color: #fff;
+  margin: 10px 0px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.content .content-left .content-item a .before,
+.content .content-right .content-item a .before {
+  z-index: 2;
+}
+.content .content-left .content-item a .after,
+.content .content-right .content-item a .after {
+  transform: rotateY(180deg);
+}
+.content .content-left .content-item a span,
+.content .content-right .content-item a span {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+}
+.content .content-left .content-item .content-item1:hover a,
+.content .content-right .content-item .content-item1:hover a {
+  transform: rotateY(180deg);
+  margin-left: 80px;
+}
+.content .content-right {
+  flex: 1;
+  background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+}

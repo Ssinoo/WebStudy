@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    #div1{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+
+  <button id='btn1'>开始运动</button>
+  <div id= 'div1'></div>
+
+  <script>
+    /*  */
+
+    var oDiv = document.getElementById('div1')
+    var oBtn = document.getElementById('btn1')
+
+    oBtn.onclick = ()=>{
+      startMove(500)
+    }
+    //封装函数
+    var timer = null;
+    function startMove(iTarget){
+      var oDiv1 =document.getElementById('div1')
+      clearInterval(timer)
+      timer = setInterval(()=>{
+        //速度和距离公式 因为speed会有小数，计算机只能识别1px，所以需要给speed向上取整
+        var speed = Math.ceil((iTarget -oDiv1.offsetLeft)/10)
+        // console.log(speed);
+        console.log(oDiv1.offsetLeft+','+iTarget);
+        if(oDiv1.offsetLeft == iTarget){
+          clearInterval(timer)
+        }else{
+          oDiv1.style.left =oDiv1.offsetLeft + speed +'px'
+        }
+      }, 30);
+    }
+  </script>
+</body>
+</html>

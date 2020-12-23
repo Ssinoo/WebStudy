@@ -1,0 +1,30 @@
+// 常见的屏幕尺寸，修改html的文字大小 
+// 划分15份
+// 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。
+// @media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。
+// 当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。
+@nu :15;
+html{
+  font-size: 40px;
+}
+@media screen and (min-width:320px){
+  html{
+    font-size: 320px /@nu;
+  }
+}
+
+@media screen and (max-width:360px){
+  html{
+    font-size: 360px /@nu;
+  }
+}
+@media screen and (max-width:720px){
+  html{
+    font-size: 720px /@nu;
+  }
+}
+@media screen and (max-width:1080px){
+  html{
+    font-size: 1080px /@nu;
+  }
+}

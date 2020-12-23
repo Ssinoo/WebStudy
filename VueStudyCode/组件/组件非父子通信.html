@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../VueJS/vue.js"></script>
+  <script>Vue.config.productionTip=false</script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id= "app">
+    <child1></child1>
+    <child2></child2>
+  </div>
+  <script>
+    //$emit :子组件可以使用 $emit 触发父组件的自定义事件
+    //$on :监听当前实例上的自定义事件。事件可以由vm.$emit触发。
+
+    //想非父子组件进行通信，需要有一个公共的中央事件总线
+    var bus = new Vue();
+
+    Vue.component("child1",{
+      template:`
+      <div>
+        <button @click="handleClick()">child1</button>
+        </div>
+      `,
+      methods: {
+        handleClick(){
+          bus.$emit("kerwin","来自child1的问候")
+        }
+      },
+    })
+    Vue.component("child2",{
+      template:`
+      <div>
+        child2
+        <p v-show="isShow">hide/show</p>
+        </div>    
+      `,
+      data() {
+        return {
+          isShow:false
+        }
+      },
+      //mounted():生命周期 在模板渲染成html后调用，
+      //通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
+      mounted() {
+        bus.$on("kerwin",(data)=>{
+          console.log("接收消息",data)
+          this.isShow = !this.isShow
+        })
+      },
+    })
+    new Vue({
+      el : "#app"
+    })
+  </script>
+</body>
+</html>

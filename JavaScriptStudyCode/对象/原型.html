@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Employee(name,position){
+      this.name=name;
+      this.position=position;
+      this.signIn= function(){
+        console.log(this.name+"打开");
+      }
+    }
+
+    var emp1 = new Employee("张三","打杂");
+    console.log(emp1);
+    console.log(Employee.prototype);
+
+    Employee.prototype.age =20;
+    console.log(emp1.age);
+    Employee.prototype.printInfo = function(){
+      console.log(this.name,this.age,this.position);
+    }
+    emp1.printInfo();
+    console.log(emp1.__proto__);
+    console.log(emp1.__proto__===Employee.prototype);
+    
+  </script>
+</body>
+</html>

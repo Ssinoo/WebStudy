@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var post ={
+      id:1,
+      title: '标题',
+      content: '俺是内容'
+    };
+    var {id,title} = post;
+    console.log(id,title);
+
+    var {id,title,comments='没有评论'} = post;
+    console.log(comments);
+
+    var[a,b =2] =[1]
+    console.log(a,b);
+
+    
+  </script>
+</body>
+</html>

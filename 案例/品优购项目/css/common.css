@@ -1,0 +1,13 @@
+.shortcut {
+  height: 37px;
+  background-color:#ffffff;
+}
+.shortcut .header {
+  display: flex;
+}
+.shortcut .header .headerc {
+  flex: 1;
+  justify-content: space-between;
+  background-color: red;
+  text-align: center;
+}

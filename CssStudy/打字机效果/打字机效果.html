@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+
+    body p {
+      color: white;
+      border-right: 2px solid white;
+      list-style: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: grow 2s steps(44) 1s normal both,
+        blink 500ms steps(44) infinite normal;
+    }
+
+    @keyframes grow {
+      from {
+        width: 0;
+
+      }
+
+      to {
+        width: 250px;
+      }
+    }
+
+    @keyframes blink {
+      from {
+        border-right-color: #eee;
+      }
+
+      to {
+        border-right-color: transparent;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>Animation Write</p>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #img1 {
+      width: 500px;
+      height: 500px;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id='img1' src="../../photo/shiyuan.jpg" alt="">
+
+  <script>
+    var oImg = document.getElementById('id')
+
+    oImg.onmouseover = function () {
+
+    }
+    oImg.onmouseout = function () {
+
+    }
+    var timer = null;
+    function startMove(iTarget) {
+      clearInterval(timer);
+      timer = setInterval(() => {
+
+      }, 30);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

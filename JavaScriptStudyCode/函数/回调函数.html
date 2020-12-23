@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //回调函数
+    function request(cb){
+      console.log("请求数据");
+      cb("success");
+      console.log("请求结果");
+    }
+    request(result =>{
+      console.log("执行回调");
+      console.log("执行结果为:"+result);
+    })
+  </script>
+
+</body>
+</html>

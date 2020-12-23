@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div id="div1"></div>
+  <script>
+    // 不能有函数嵌套
+    // 可以有全局变量
+    var div1 = document.getElementById('div1');
+    tarp(div1)
+    function tarp(node) {
+
+      node.onmousedown=(ev)=>{
+        var offsetX = ev.clientX - node.offsetLeft
+        var offsetY = ev.clientY - node.offsetTop;
+        document.onmousemove = (ev)=>{
+          node.style.left = ev.clientX - offsetX + 'px'
+          node.style.top = ev.clientY - offsetY + 'px'
+        }
+      }
+      document.onmouseup=()=>{
+        document.onmousemove =null
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

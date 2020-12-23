@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      background-color: red;
+    }
+  </style>
+
+  <script>
+   /*  1.停不下来 给定时器添加timer 来判断是否需要停止
+    2.到目的地，还能点击移动，把移动的代码放入else中
+    3.重复点击按钮会加速运动 是因为点一次就会启动一次定时器，多次就会启动多次
+     保证只有一个定时器在启动，启动一次就关闭上一次启动定时器
+    
+      运动框架:
+        1 启动就关闭定时器
+        2 if else */
+   
+
+    window.onload = function () {
+      var oBtn = document.getElementById('btn1')
+      var oDiv = document.getElementById('div1')
+      var speed = 5;
+      var timer = null;
+      oBtn.onclick = function () {
+        clearInterval(timer)
+
+        timer = setInterval(() => {
+
+          if (oDiv.offsetLeft >= 500) {
+            clearInterval(timer)
+          } else {
+            oDiv.style.left = oDiv.offsetLeft + speed + 'px'
+          }
+        }, 30);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <button id='btn1'>开始运动</button>
+  <div id='div1'></div>
+</body>
+
+</html>

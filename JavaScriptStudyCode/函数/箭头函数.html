@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //箭头函数
+    var greeting = ()=>{
+      console.log("hello");
+    };
+    greeting();
+    //一个参数 括号可以去掉
+    var greeting2 = name =>{
+      console.log(name+" say hello");
+    }
+    greeting2("ssinoo");
+    // 多个参数
+    var greeting3 = (name,age)=>{
+      console.log(name+"is"+age);
+    }
+    greeting3("ssinoo","20")
+    // 有返回值 传x 返回 x+1
+    var increment = x=>x+1;
+    console.log(increment(6));
+  </script>
+</body>
+</html>

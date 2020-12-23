@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    var nums = [1,2,17,3];
+
+    let map =new Map();
+    let arr =new Array();
+    for(let i in nums){
+      // console.log(map.set(nums[i],i))
+      // console.log(nums[i]);
+      console.log(map.set(i,nums[i]));
+      console.log(map.has(i));
+    }
+  </script>
+</body>
+</html>

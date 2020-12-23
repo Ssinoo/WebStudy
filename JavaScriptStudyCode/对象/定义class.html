@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Employee{
+      constructor(name,position){
+        this.name=name;
+        this.position=position;
+      }
+      signIn(){
+        console.log(this.name+'打卡上班');
+      }
+      get info(){
+        return this.name+ ''+ this.position;
+      }
+      set info(info){
+        let[name,position] = info.split(' ');
+        this.name=name;
+        this.position=position;
+      }
+    }
+    var emp1 = new Employee('张三','打杂');
+    console.log(emp1.info);
+    emp1.info ='李四 扫地';
+    console.log(emp1.info);
+    //继承
+    class Manager extends  Employee{
+      constructor(name,position,dept){
+        super(name,position);
+        this.dept=dept;
+      }
+      signIn(){
+        super.signIn();
+        console.log('睡了，晚安');
+      }
+    }
+    var manager = new Manager('王五','拖地','卫生部门');
+    manager.signIn();
+  </script>
+</body>
+</html>

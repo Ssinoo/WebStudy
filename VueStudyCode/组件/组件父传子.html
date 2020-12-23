@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../VueJS/vue.js"></script>
+  <script>Vue.config.productionTip=false</script>
+</head>
+<body>
+  <div id = "app">
+    <noo ></noo>
+    <noo></noo>
+    <noo :myshow="true" myname="啊，马飞" word="嘿嘿嘿"></noo>
+  </div>
+  <script> 
+    Vue.component(
+      "noo",{
+        template:`
+        <div>
+          <span>{{title}}--{{myname}}</span>
+          <button @click="console1()">按钮</button>
+          <span  v-show="myshow">222</span>
+          <p>{{word}}</p>
+          </div>
+        `  ,
+        //父组件需要使用props传递，这种写法验证传入值:属性验证
+        props:{
+          myname:String,
+          word:String,
+          myshow:Boolean
+        },
+         methods:{
+           console1(){
+            console.log("嘿嘿嘿");
+           }
+         },
+         data(){
+           return{
+             title:"牛逼"
+           }
+         }
+
+      }
+    )
+    new Vue({
+      el : "#app"
+    })
+  </script>
+</body>
+</html>

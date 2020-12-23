@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p><input type="checkbox" id="1">1</p>
+  <p><input type="checkbox" id="2">2</p>
+  <p><input type="checkbox" id="3">3</p>
+  <button onclick="getAll(1)">全选</button>
+  <button onclick="getAll(2)">全不选</button>
+  <button onclick="getAll(0)">反选</button>
+  
+  
+
+  <script>
+    let inp=document.getElementsByTagName("input");
+     function getAll(num){
+      for(let i =0;i<inp.length;i++){
+        if(num==0){
+          inp[i].checked= !inp[i].checked;
+        }
+        if(num==1){
+          inp[i].checked= true;
+        }
+        if(num==2){
+          inp[i].checked = false;
+        }
+
+      }
+    }
+  </script>
+</body>
+</html>

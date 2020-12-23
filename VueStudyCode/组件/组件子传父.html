@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../VueJS/vue.js"></script>
+  <script>Vue.config.productionTip=false</script>
+</head>
+<body>
+  
+  <div id ="app">
+    <zi @myevent="showEvent()"></zi>
+    <noo v-show="isShow"></noo>
+  </div>
+<script>
+  //子组件
+  Vue.component("zi",{
+    template:`
+    <div>
+      <button @click="showEvent()">hide/show</button>
+      </div>
+    `,
+    methods: {
+      showEvent(){
+        //子传父
+        this.$emit("myevent")
+      }
+    },
+  })
+  Vue.component("noo",{
+    template:`
+    <div>
+      <ul>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+      </ul>
+    </div>
+    
+    `
+  })
+  new Vue({
+    el : "#app",
+    data() {
+      return {
+        isShow:true
+      }
+    },
+    methods: {
+      showEvent(){
+        this.isShow=!this.isShow;
+      }
+    },
+  })
+</script>
+</body>
+</html>

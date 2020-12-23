@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  console.log("啊这1");
+  var timer1 =setTimeout(()=>{
+    console.log("啊这2");
+  },2000)
+  console.log("啊这3");
+
+  setTimeout(()=>{
+    clearTimeout(timer1);
+    console.log("中断了timer1");
+  })
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   div{
+     width: 100px;
+     margin-left: 45%;
+   }
+  
+  </style>
+</head>
+<body  id="body" style="z-index: 999999;" >
+  <div>
+    <p>今日冲不冲</p>
+    <div>冲</div>
+    <div>戒色</div>
+    <button >启动</button>
+  </div>
+  <span id="text" style="color: red; font-size: 100px; text-align: center; margin-left: 40%;"></span>
+  <script>
+    let timer=null;
+    document.getElementsByTagName('button')[0].onclick=()=>{
+      let num = 0;
+      timer=setInterval(()=>{
+        num++
+        let rand = Math.ceil(Math.random()*2);
+        let answer =document.getElementsByTagName('div');
+        for(let i=0;i<answer.length;i++){
+          answer[i].style.backgroundColor='#fff';
+      }
+          answer[rand].style.backgroundColor='red';
+        if(num>=50){
+          clearInterval(timer);
+          if(rand==2){
+            document.getElementById("text").innerText="戒色成功"
+            document.getElementById("body").background="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3502621506,1432519602&fm=26&gp=0.jpg"
+          }else{
+            document.getElementById("text").innerText="冲啊！！！"
+            
+            document.getElementById("body").background="https://w.wallhaven.cc/full/ey/wallhaven-eydo5k.jpg"
+          }
+          
+        }
+      },50)
+    }
+  </script>
+</body>
+</html>

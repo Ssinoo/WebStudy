@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function reverse(n) {
+      let y = n % 10;
+      let s = String(y);
+      if (n / 10 >= 1) {
+        s += reverse((n - y) / 10);
+      }
+      console.log(s);
+
+      // return s;
+
+    }
+    reverse(1234)
+  </script>
+</body>
+
+</html>

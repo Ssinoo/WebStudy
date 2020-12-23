@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../VueJS/vue.js"></script>
+  <script>Vue.config.productionTip=false</script>
+</head>
+<body>
+  <div id = "app">
+    <noo></noo>
+  </div>
+  
+  
+  <script>
+    Vue.component("noo",{
+      template:`
+      <div>
+        <span>111</span>
+        <button>111</button>
+        </div>
+      `
+    })
+    new Vue({
+      el:"#app"
+    })
+
+  </script>
+  
+</body>
+</html>

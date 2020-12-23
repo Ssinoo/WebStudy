@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多物体运动</title>
+  <style>
+    section{
+      margin: 20px;
+      width: 100px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+
+  <script>
+    var oDiv = document.getElementsByTagName('section');
+
+    // var timer= null ;
+    function startMove(node , iTarget){
+      clearInterval(node.timer)
+      node.timer= setInterval(()=>{
+        var speed = (iTarget - node.offsetWidth) /8
+        console.log(iTarget);
+        speed= speed>0 ? Math.ceil(speed) : Math.floor(speed)
+
+        if(node.offsetWidth == iTarget){
+          clearInterval(node.timer)
+        }else{
+          node.style.width = node.offsetWidth + speed +'px';
+        }
+      },30)
+    }
+
+    for(var i = 0; i<oDiv.length ;i++){
+      oDiv[i].onmouseover =  function(){
+        startMove(this,300)
+        console.log(oDiv.length);
+        console.log('over');
+      }
+      oDiv[i].onmouseout = function(){
+        startMove(this,101)
+        console.log('move');
+      }
+    }
+  </script>
+</body>
+</html>

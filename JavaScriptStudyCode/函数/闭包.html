@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+    
+  <script>
+    //闭包
+    function squareSum(a,b){
+      function  square(x){
+        return x*x;
+      }
+      return square(a) + square(b);
+    }
+    console.log(squareSum(4,5));
+  </script>
+</body>
+</html>

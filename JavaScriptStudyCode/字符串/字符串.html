@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //字符串的定义和转义
+    var str1 ='Hello China';
+    var str2 = new String('你好');
+    //字符串遍历
+    for(let i=0;i<str1.length;i++){
+      console.log(str1.charAt(i));
+    }
+    for(let j of str1){
+      console.log(j);
+    }
+    //字符串的裁切
+    console.clear();
+    console.log(str1.slice(0,4));
+    console.log(str1.substring(0,4));
+    //字符串拼接
+    console.log(str1+str2);
+    console.log(str1.concat(str2));
+    //字符串大小写转换
+    console.log(str1.toUpperCase());
+    console.log(str1.toLocaleUpperCase());
+    console.log(str1.toLowerCase());
+    console.log(str1.toLocaleLowerCase());
+    //字符串去空格
+    console.log(str1.trim());
+    //模板字符串
+    
+    var name='张三';
+    var str =`你好,${name}`;
+
+    function greeting(string,gender){
+      let genderStr='人下人'
+      return `${string[0]}${genderStr}`
+    }
+    var gender='M';
+    var result =greeting`你好，打工人${gender}`;
+    console.log(result);
+  </script>
+</body>
+</html>

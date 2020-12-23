@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #proBar1{
+      width: 400px;
+      height: 50px;
+      border: red solid 1px ;
+      
+    }
+    #proBar2{
+      height: 50px;
+      width: 0px;
+      background-color: red;
+      text-align: center;
+    }
+    #Bar{
+     line-height: 50px;
+     padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="proBar1">
+    <div id="proBar2">
+      <span id="Bar">0</span>
+    </div>
+  </div>
+  <button>屁迪死期</button>
+  <div style="text-align: center; color: red; font-size: 100px;"></div>
+  <script>
+    document.getElementsByTagName("button")[0].onclick=()=>{
+      let timer = null;
+      let num = 0;
+      if(timer ==null){
+        timer=setInterval(()=>{
+          num +=10;
+          if(num<=400){
+            document.getElementById("proBar2").style.width=num+'px';
+            document.getElementById("Bar").innerText= Math.ceil(num/400*100)+'%';
+          }
+          if(num==400){
+            document.getElementsByTagName("div")[2].innerText="屁迪今晚biss";
+            clearInterval(timer);
+          }
+      },100)
+      }
+    }
+  </script>
+</body>
+</html>

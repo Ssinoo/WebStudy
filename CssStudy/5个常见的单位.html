@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      /* 默认全局的字体大小为10px */
+      font-size: 10px;
+      padding: 0;
+      margin: 0;
+
+    }
+    .em{
+      /* 放大了2倍 */
+      font-size: 2em;
+    }
+    .vwh{
+      background-color: blue;
+      width: 50vw;
+      height: 50vh;
+    }
+    .vmin img{
+      width: 20vmin;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- px单位 -->
+    <!-- 宽*高 -->
+    我是px
+  </div>
+  <div class="em">
+    <!-- em单位 -->
+    <!-- 相当于两倍 -->
+    我是EM
+  </div>
+  <div class="vwh">
+    <!-- vh&&vh单位 -->
+    <!-- 相当于盒子的百分比 -->
+    我是vm&&vh
+  </div>
+  <div class="vmin">
+    <!-- vmin/vmax代表荧幕较短/长的一边作为图片宽度 -->
+    <img src="../photo//header.png">
+  </div>
+  <div></div>
+</body>
+</html>

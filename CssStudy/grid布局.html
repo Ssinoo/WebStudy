@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .grid div:nth-child(-n+6){
+      width: 200px;
+      height: 100px;
+      background-color: red;
+      margin: 1px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="colunmn1"></div>
+    <div class="colunmn2"></div>
+    <div class="colunmn3"></div>
+    <div class="colunmn4"></div>
+    <div class="colunmn5"></div>
+    <div class="colunmn6"></div>
+  </div>
+
+  
+</body>
+</html>

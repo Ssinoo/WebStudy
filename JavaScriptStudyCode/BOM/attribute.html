@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>节点操作案例</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+
+    }
+    #div1{
+      height: 100px;
+      background-color: blanchedalmond;
+    }
+    #div2{
+      height: 300px;
+      background-color: blueviolet;
+      overflow: hidden;
+    }
+  </style>
+  <script>
+    window.onload =function(){
+      var di1 = document.getElementById('div1');
+      var di2 = document.getElementById('div2');
+      var oinput = document.getElementById('input1')
+      var obtn = di1.getElementsByTagName('button');
+      //添加节点
+      obtn[0].onclick =function(){
+        if(!oinput.value){
+          console.log('空');
+        }else{
+          //获取输入框内容，创建节点在页面上
+          var newDiv =document.createElement('div');
+          var oTex = document.createTextNode(oinput.value);
+          newDiv.appendChild(oTex);
+          di2.appendChild(newDiv)
+          oinput.value =''
+        }
+      }
+      obtn[1].onclick=function(){
+        di2.removeChild(di2.lastChild)
+      }
+      obtn[2].onclick=function(){
+        //拷贝最后一个节点
+        di2.appendChild(di2.lastChild.cloneNode(true))
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id='div1'>
+    <input type="text" name="" id="input1" placeholder="请输入内容">
+    <button>增加</button>
+    <button>删除</button>
+    <button>拷贝</button>
+  </div>
+  <div id='div2'></div>
+</body>
+</html>
