@@ -1,0 +1,22 @@
+.header {
+  width: 1000px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 400px;
+    width: 500px;
+  }
+}
+
+.header {
+  color: blue;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 200px;
+    color: red;
+  }
+}
+/*# sourceMappingURL=media.css.map */

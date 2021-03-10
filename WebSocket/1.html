@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var ws = new WebSocket('ws://localhost:8080')
+
+    //监听建立连接
+    ws.onopen=(res)=>{
+      console.log('连接成功');
+      console.log(res);
+    }
+
+    //监听有新消息
+    ws.onmessage=(res)=>{
+      console.log('有新消息');
+      console.log(res);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.text {
+  width: 600px;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-decoration: ellipsis;
+          text-decoration: ellipsis;
+}
+
+.content-text {
+  width: 600px;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-decoration: ellipsis;
+          text-decoration: ellipsis;
+}
+/*# sourceMappingURL=Mixin.css.map */

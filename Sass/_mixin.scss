@@ -1,0 +1,6 @@
+// 这是一个单行文本省略的css
+@mixin singleline-ellipsis($width) {
+  width: $width;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

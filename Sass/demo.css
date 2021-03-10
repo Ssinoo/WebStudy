@@ -1,0 +1,18 @@
+.header {
+  width: 600px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.header span {
+  color: red;
+}
+
+.header span:active {
+  color: green;
+}
+
+.header span:hover {
+  color: blue;
+}
+/*# sourceMappingURL=demo.css.map */

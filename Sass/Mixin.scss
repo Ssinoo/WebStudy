@@ -1,0 +1,15 @@
+@mixin singleline-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: ellipsis;
+}
+
+.text{
+  width: 600px;
+  @include singleline-ellipsis;
+}
+
+.content-text{
+  width: 600px;
+  @include singleline-ellipsis;
+}

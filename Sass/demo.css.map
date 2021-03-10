@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,OAAO,CAAA;ECCL,KAAK,EDSwB,KAAK;ECRlC,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,QAAQ;CDSxB;;AAZD,AACE,OADK,CACL,IAAI,CAAA;EACF,KAAK,EAAE,GAAG;CAOX;;AATH,AAGI,OAHG,CACL,IAAI,AAED,OAAO,CAAA;EACN,KAAK,EAAE,KAAK;CACb;;AALL,AAMI,OANG,CACL,IAAI,AAKD,MAAM,CAAA;EACL,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "demo.scss",
+        "_mixin.scss"
+    ],
+    "names": [],
+    "file": "demo.css"
+}

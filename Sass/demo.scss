@@ -1,0 +1,14 @@
+@import '_mixin';
+.header{
+  span{
+    color: red;
+    &:active{
+      color: green;
+    }
+    &:hover{
+      color: blue;
+    }
+  }
+  @include singleline-ellipsis(600px);
+
+}
